@@ -18,7 +18,7 @@
         android:id="@+id/districtFragment"
         android:name="com.alijan.turkeymuseum.ui.district.DistrictFragment"
         android:label="fragment_district"
-        tools:layout="@layout/fragment_district" >
+        tools:layout="@layout/fragment_region" >
         <argument
             android:name="city"
             app:argType="string" />

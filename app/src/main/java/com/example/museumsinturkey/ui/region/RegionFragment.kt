@@ -11,13 +11,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.alijan.turkeymuseum.ui.adapter.RegionAdapter
 import com.alijan.turkeymuseum.ui.city.RegionViewModel
-import com.example.museumsinturkey.databinding.FragmentDistrictBinding
+import com.example.museumsinturkey.databinding.FragmentRegionBinding
 import com.example.museumsinturkey.utill.NetworkResponse
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class RegionFragment : Fragment() {
-    private var _binding: FragmentDistrictBinding? = null
+    private var _binding: FragmentRegionBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<RegionViewModel>()
     private val districtAdapter = RegionAdapter()
@@ -28,7 +28,7 @@ class RegionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentDistrictBinding.inflate(layoutInflater)
+        _binding = FragmentRegionBinding.inflate(layoutInflater)
         return binding.root
     }
 
