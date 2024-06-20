@@ -20,8 +20,8 @@ class RegionFragment : Fragment() {
     private var _binding: FragmentRegionBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<RegionViewModel>()
-    private val districtAdapter = RegionAdapter()
-    private val args: DistrictFragmentArgs by navArgs()
+    private val regionAdapter = RegionAdapter()
+    private val args: RegionFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,10 +44,10 @@ class RegionFragment : Fragment() {
     }
 
     private fun setAdapter() {
-        binding.rvDistrict.adapter = districtAdapter
-        districtAdapter.onClick = {
+        binding.rvDistrict.adapter = regionAdapter
+        regionAdapter.onClick = {
             findNavController().navigate(
-                DistrictFragmentDirections.actionDistrictFragmentToMuseumFragment(
+                RegionFragmentDirections.actionRegionFragmentToMuseumFragment(
                     args.city,
                     it
                 )
@@ -67,7 +67,7 @@ class RegionFragment : Fragment() {
                 }
 
                 is NetworkResponse.Success -> {
-                    districtAdapter.updateList(it.data!!)
+                    regionAdapter.updateList(it.data!!)
                 }
             }
         }

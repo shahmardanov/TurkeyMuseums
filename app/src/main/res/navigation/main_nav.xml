@@ -11,20 +11,8 @@
         android:label="fragment_city"
         tools:layout="@layout/fragment_city" >
         <action
-            android:id="@+id/action_cityFragment_to_districtFragment"
-            app:destination="@id/districtFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/districtFragment"
-        android:name="com.alijan.turkeymuseum.ui.district.DistrictFragment"
-        android:label="fragment_district"
-        tools:layout="@layout/fragment_region" >
-        <argument
-            android:name="city"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_districtFragment_to_museumFragment"
-            app:destination="@id/museumFragment" />
+            android:id="@+id/action_cityFragment_to_regionFragment"
+            app:destination="@id/regionFragment" />
     </fragment>
     <fragment
         android:id="@+id/museumFragment"
@@ -35,7 +23,18 @@
             android:name="city"
             app:argType="string" />
         <argument
-            android:name="district"
+            android:name="region"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/regionFragment"
+        android:name="com.alijan.turkeymuseum.ui.district.RegionFragment"
+        android:label="RegionFragment" >
+        <action
+            android:id="@+id/action_regionFragment_to_museumFragment"
+            app:destination="@id/museumFragment" />
+        <argument
+            android:name="city"
             app:argType="string" />
     </fragment>
 </navigation>

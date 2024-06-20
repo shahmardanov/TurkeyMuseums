@@ -15,23 +15,23 @@ import javax.inject.Inject
 class RegionViewModel @Inject constructor(private val museumRepository: MuseumRepository) :
     ViewModel() {
 
-    private var _districts = MutableLiveData<NetworkResponse<List<Region>>>()
-    val region: LiveData<NetworkResponse<List<Region>>> get() = _districts
+    private var region2 = MutableLiveData<NetworkResponse<List<Region>>>()
+    val region: LiveData<NetworkResponse<List<Region>>> get() = region2
 
     fun getAllDistrict(city: String) {
         viewModelScope.launch {
             try {
-                _districts.value = NetworkResponse.Loading()
+                region2.value = NetworkResponse.Loading()
                 val resp = museumRepository.getAllRegions(city)
                 if (resp.isSuccessful) {
                     resp.body()?.let {
-                        _districts.value = NetworkResponse.Success(it.data)
+                        region2.value = NetworkResponse.Success(it.data)
                     }
                 } else {
-                    _districts.value = NetworkResponse.Error(resp.errorBody().toString())
+                    region2.value = NetworkResponse.Error(resp.errorBody().toString())
                 }
             } catch (e: Exception) {
-                _districts.value = NetworkResponse.Error(e.localizedMessage?.toString())
+                region2.value = NetworkResponse.Error(e.localizedMessage?.toString())
             }
         }
     }

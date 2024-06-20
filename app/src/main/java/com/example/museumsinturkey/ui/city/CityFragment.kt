@@ -38,7 +38,7 @@ class CityFragment : Fragment() {
     private fun setAdapter() {
         binding.rvCity.adapter = cityAdapter
         cityAdapter.onClick = {
-            findNavController().navigate(CityFragmentDirections.actionCityFragmentToDistrictFragment(it))
+            findNavController().navigate(CityFragmentDirections.actionCityFragmentToRegionFragment(it))
         }
     }
 

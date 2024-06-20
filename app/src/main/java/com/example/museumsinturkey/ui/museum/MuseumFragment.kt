@@ -39,7 +39,7 @@ class MuseumFragment : Fragment() {
     }
 
     private fun requestApi() {
-        viewModel.getAllMuseum(args.city, args.district)
+        viewModel.getAllMuseum(args.city, args.region)
     }
 
     private fun setAdapter() {

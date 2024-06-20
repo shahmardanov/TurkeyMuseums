@@ -13,107 +13,106 @@
         android:id="@+id/clMuseum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@color/white">
+        android:padding="16dp"
+        android:background="#95BC97">
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:id="@+id/textViewMuseumName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:text="@{item.name}"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="24dp"/>
 
         <TextView
             android:id="@+id/textViewMuseumCity"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:text='@{"Şehir: "+item.city}'
+            android:text="@{@string/text_city_prefix + item.city}"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
+            app:layout_constraintEnd_toEndOf="@id/textViewMuseumName"
+            app:layout_constraintTop_toBottomOf="@id/textViewMuseumName"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/textViewMuseumDistrict"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text='@{"İlçe: "+item.district}'
+            android:text="@{@string/text_district_prefix + item.district}"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textViewMuseumCity"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMuseumCity" />
+            app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
+            app:layout_constraintEnd_toEndOf="@id/textViewMuseumName"
+            app:layout_constraintTop_toBottomOf="@id/textViewMuseumCity"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/textViewMuseumEmail"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text='@{"Email: "+item.email}'
+            android:text="@{@string/text_email_prefix + item.email}"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textViewMuseumDistrict"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMuseumDistrict" />
+            app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
+            app:layout_constraintEnd_toEndOf="@id/textViewMuseumName"
+            app:layout_constraintTop_toBottomOf="@id/textViewMuseumDistrict"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/textViewMuseumPhone"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text='@{"Telefon numarası: "+item.phone}'
+            android:text="@{@string/text_phone_prefix + item.phone}"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textViewMuseumEmail"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMuseumEmail" />
+            app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
+            app:layout_constraintEnd_toEndOf="@id/textViewMuseumName"
+            app:layout_constraintTop_toBottomOf="@id/textViewMuseumEmail"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/textViewMuseumAddress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:text='@{"Adres: "+item.address}'
+            android:text="@{@string/text_address_prefix + item.address}"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewMuseumPhone"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMuseumPhone" />
+            app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
+            app:layout_constraintEnd_toEndOf="@id/textViewMuseumName"
+            app:layout_constraintTop_toBottomOf="@id/textViewMuseumPhone"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/textViewMuseumWorkingTimes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:text='@{"Çalışma saati: "+item.workingTime}'
+            android:text="@{@string/text_working_time_prefix + item.workingTime}"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewMuseumAddress"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMuseumAddress" />
+            app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
+            app:layout_constraintEnd_toEndOf="@id/textViewMuseumName"
+            app:layout_constraintTop_toBottomOf="@id/textViewMuseumAddress"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/textViewMuseumDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="24dp"
-            android:text='@{item.description}'
+            android:text="@{item.description}"
             android:textColor="@color/black"
             android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
+            app:layout_constraintEnd_toEndOf="@id/textViewMuseumName"
+            app:layout_constraintTop_toBottomOf="@id/textViewMuseumWorkingTimes"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewMuseumWorkingTimes"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMuseumWorkingTimes" />
+            android:layout_marginTop="8dp"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
