@@ -4,18 +4,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alijan.turkeymuseum.data.model.Region
-import com.example.museumsinturkey.databinding.ItemDistrictBinding
+import com.example.museumsinturkey.databinding.ItemRegionBinding
 
 class RegionAdapter : RecyclerView.Adapter<RegionAdapter.DistrictViewHolder>() {
 
     private val listOfRegions = ArrayList<Region>()
     lateinit var onClick: (district: String) -> Unit
 
-    inner class DistrictViewHolder(val itemDistrictBinding: ItemDistrictBinding) :
+    inner class DistrictViewHolder(val itemDistrictBinding: ItemRegionBinding) :
         RecyclerView.ViewHolder(itemDistrictBinding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DistrictViewHolder {
-        val view = ItemDistrictBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val view = ItemRegionBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return DistrictViewHolder(view)
     }
 
