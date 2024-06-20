@@ -1,7 +1,7 @@
 package com.example.museumsinturkey.data.repo
 
 import com.alijan.turkeymuseum.data.model.CityResponse
-import com.alijan.turkeymuseum.data.model.DistrictResponse
+import com.alijan.turkeymuseum.data.model.RegionResponse
 import com.alijan.turkeymuseum.data.model.MuseumResponse
 import com.example.museumsinturkey.data.api.ApiService
 import kotlinx.coroutines.Dispatchers
@@ -15,15 +15,15 @@ class MuseumRepository @Inject constructor(private val apiService: ApiService) {
         return@withContext apiService.getAllCity()
     }
 
-    suspend fun getAllDistrict(city: String): Response<DistrictResponse> =
+    suspend fun getAllRegions(city: String): Response<RegionResponse> =
         withContext(Dispatchers.IO) {
             return@withContext apiService.getAllDistrict(city = city)
         }
 
-    suspend fun getMuseumByCityAndDistrict(
+    suspend fun getMuseumByCityAndRegion(
         city: String,
-        district: String
+        region: String
     ): Response<MuseumResponse> = withContext(Dispatchers.IO) {
-        return@withContext apiService.getMuseumByCityAndDistrict(city = city, district = district)
+        return@withContext apiService.getMuseumByCityAndDistrict(city = city, district = region)
     }
 }

@@ -3,11 +3,11 @@ package com.alijan.turkeymuseum.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class DistrictResponse(
+data class RegionResponse(
     @SerializedName("creditUsed")
     val creditUsed: Int?,
     @SerializedName("data")
-    val `data`: List<District>,
+    val `data`: List<Region>,
     @SerializedName("endpoint")
     val endpoint: String?,
     @SerializedName("message")

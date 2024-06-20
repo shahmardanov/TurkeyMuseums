@@ -3,7 +3,7 @@ package com.alijan.turkeymuseum.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class District(
+data class Region(
     @SerializedName("cities")
     val cities: String?,
     @SerializedName("slug")

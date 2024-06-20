@@ -3,12 +3,12 @@ package com.alijan.turkeymuseum.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.alijan.turkeymuseum.data.model.District
-import com.alijan.turkeymuseum.databinding.ItemDistrictBinding
+import com.alijan.turkeymuseum.data.model.Region
+import com.example.museumsinturkey.databinding.ItemDistrictBinding
 
 class RegionAdapter : RecyclerView.Adapter<RegionAdapter.DistrictViewHolder>() {
 
-    private val districtList = ArrayList<District>()
+    private val listOfRegions = ArrayList<Region>()
     lateinit var onClick: (district: String) -> Unit
 
     inner class DistrictViewHolder(val itemDistrictBinding: ItemDistrictBinding) :
@@ -20,11 +20,11 @@ class RegionAdapter : RecyclerView.Adapter<RegionAdapter.DistrictViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return districtList.size
+        return listOfRegions.size
     }
 
     override fun onBindViewHolder(holder: DistrictViewHolder, position: Int) {
-        val currentItem = districtList[position]
+        val currentItem = listOfRegions[position]
         holder.itemDistrictBinding.district = currentItem.cities
         holder.itemDistrictBinding.textViewItemDistrictNumber.setText("${position + 1} -")
         holder.itemDistrictBinding.clDistrict.setOnClickListener {
@@ -32,9 +32,9 @@ class RegionAdapter : RecyclerView.Adapter<RegionAdapter.DistrictViewHolder>() {
         }
     }
 
-    fun updateList(newList: List<District>) {
-        districtList.clear()
-        districtList.addAll(newList)
+    fun updateList(newList: List<Region>) {
+        listOfRegions.clear()
+        listOfRegions.addAll(newList)
         notifyDataSetChanged()
     }
 

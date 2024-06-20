@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/cityFragment">
+
+    <fragment
+        android:id="@+id/cityFragment"
+        android:name="com.alijan.turkeymuseum.ui.city.CityFragment"
+        android:label="fragment_city"
+        tools:layout="@layout/fragment_city" >
+        <action
+            android:id="@+id/action_cityFragment_to_districtFragment"
+            app:destination="@id/districtFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/districtFragment"
+        android:name="com.alijan.turkeymuseum.ui.district.DistrictFragment"
+        android:label="fragment_district"
+        tools:layout="@layout/fragment_district" >
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_districtFragment_to_museumFragment"
+            app:destination="@id/museumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/museumFragment"
+        android:name="com.alijan.turkeymuseum.ui.museum.MuseumFragment"
+        android:label="fragment_museum"
+        tools:layout="@layout/fragment_museum" >
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <argument
+            android:name="district"
+            app:argType="string" />
+    </fragment>
+</navigation>

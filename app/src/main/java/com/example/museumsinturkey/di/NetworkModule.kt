@@ -1,5 +1,7 @@
 package com.example.museumsinturkey.di
 
+import com.example.museumsinturkey.data.api.ApiService
+import com.example.museumsinturkey.utill.Constant
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,15 +18,15 @@ object NetworkModule {
     @Provides
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(Constant.BASE_URL + Constant.API_PREFIX)
+            .baseUrl(Constant.BASE_URL + Constant.API_REGION)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
 
     @Singleton
     @Provides
-    fun provideAPIServices(retrofit: Retrofit): APIServices {
-        return retrofit.create(APIServices::class.java)
+    fun provideAPIServices(retrofit: Retrofit): ApiService {
+        return retrofit.create(ApiService::class.java)
     }
 
 }

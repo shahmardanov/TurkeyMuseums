@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alijan.turkeymuseum.data.model.City
-import com.alijan.turkeymuseum.databinding.ItemCityBinding
+import com.example.museumsinturkey.databinding.ItemCityBinding
 
 class CityAdapter : RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
 
-    private val cityList = ArrayList<City>()
+    private val listOfCity = ArrayList<City>()
     lateinit var onClick: (city: String) -> Unit
 
     inner class CityViewHolder(val itemCityBinding: ItemCityBinding) :
@@ -20,11 +20,11 @@ class CityAdapter : RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return cityList.size
+        return listOfCity.size
     }
 
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
-        val currentItem = cityList[position]
+        val currentItem = listOfCity[position]
         holder.itemCityBinding.city = currentItem.cities
         holder.itemCityBinding.textViewItemCityNumber.setText("${position + 1} -")
         holder.itemCityBinding.clItemCity.setOnClickListener {
@@ -33,8 +33,8 @@ class CityAdapter : RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
     }
 
     fun updateList(newList: List<City>) {
-        cityList.clear()
-        cityList.addAll(newList)
+        listOfCity.clear()
+        listOfCity.addAll(newList)
         notifyDataSetChanged()
     }
 
