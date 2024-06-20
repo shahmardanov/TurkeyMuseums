@@ -33,7 +33,7 @@
             android:id="@+id/textViewMuseumCity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{@string/text_city_prefix + item.city}"
+            android:text='@{"Şehir: "+item.city}'
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
@@ -45,7 +45,7 @@
             android:id="@+id/textViewMuseumDistrict"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{@string/text_district_prefix + item.district}"
+            android:text='@{"İlçe: "+item.district}'
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
@@ -57,7 +57,7 @@
             android:id="@+id/textViewMuseumEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{@string/text_email_prefix + item.email}"
+            android:text='@{"Email: "+item.email}'
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
@@ -69,7 +69,7 @@
             android:id="@+id/textViewMuseumPhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{@string/text_phone_prefix + item.phone}"
+            android:text='@{"Telefon numarası: "+item.phone}'
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
@@ -81,7 +81,7 @@
             android:id="@+id/textViewMuseumAddress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{@string/text_address_prefix + item.address}"
+            android:text='@{"Adres: "+item.address}'
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
@@ -93,7 +93,7 @@
             android:id="@+id/textViewMuseumWorkingTimes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{@string/text_working_time_prefix + item.workingTime}"
+            android:text='@{"Çalışma saati: "+item.workingTime}'
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
@@ -105,7 +105,7 @@
             android:id="@+id/textViewMuseumDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{item.description}"
+            android:text='@{item.description}'
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/textViewMuseumName"
